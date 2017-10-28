@@ -14,22 +14,6 @@ def dir_init(clearDir=0):
 	#create videos folder
 	if not os.path.exists("videos"):
 		os.makedirs("videos")
-	#if clear flag is true, clear folder contents
-	if(clearDir == 1):
-		for photo in os.listdir("images"):
-			file_path = os.path.join("images",photo)
-			try:
-				if os.path.isfile(file_path):
-					os.unlink(file_path)
-			except Exception as e:
-				print(e)
-		for video in os.listdir("videos"):
-			file_path = os.path.join("videos",video)
-			try:
-				if os.path.isfile(file_path):
-					os.unlink(file_path)
-			except Exception as e:
-				print(e)
 
 
 if __name__ == "__main__":
