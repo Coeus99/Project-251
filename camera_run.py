@@ -10,7 +10,7 @@ def main():
 
 
 ####################################
-# Takes video for a specified time
+# Takes picture at high res
 ####################################
 def take_picture():
 	#Sensor mode 1: 1920x1080, 1/10<=fps<=30
@@ -28,7 +28,7 @@ def take_picture():
 
 
 ####################################
-# Takes high resolution photo
+# Takes video given a length
 ####################################
 def take_video(time):
 	#Sensor mode 2: 3280x2464, 1/10<=fps<=15
