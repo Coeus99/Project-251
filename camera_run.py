@@ -7,7 +7,7 @@ camera = PiCamera()
 # Main function, pilots code
 ####################################
 def main():
-	videoLength = 3000
+	videoLength = 10
 	take_picture()
 	take_video(videoLength)
 
@@ -25,7 +25,7 @@ def take_picture():
 
 	filename = datetime.now().strftime("%Y-%m-%d--%H%M.jpeg")
 	#take photo
-	camera.capture(filename,quality = 100)
+	camera.capture(filename,quality=100)
 
 	#prepare for mode change
 	camera.stop_preview()
@@ -43,8 +43,8 @@ def take_video(length):
 
 	filename = datetime.now().strftime("%Y-%m-%d--%H%M.h264")
 	#take video
-	camera.start_recording(filename,quality = 10)
-	sleep(length)
+	camera.start_recording(filename,quality=10)
+	camera.wait_recording(length)
 	camera.stop_recording()
 
 	#prepare for mode change
