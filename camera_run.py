@@ -20,8 +20,8 @@ def take_picture():
 	#warmup camera
 	camera.start_preview()
 	sleep(2)
-	
-	filename = datetime.now().strftime("%Y-%m-%d::%H%M.jpeg")
+
+	filename = datetime.now().strftime("%Y-%m-%d--%H%M.jpeg")
 	#take photo
 	camera.capture(filename,quality = 100)
 
