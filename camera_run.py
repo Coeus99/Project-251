@@ -43,7 +43,7 @@ def take_video(length):
 
 	filename = datetime.now().strftime("%Y-%m-%d--%H%M.h264")
 	#take video
-	camera.start_recording(filename,quality=10)
+	camera.start_recording(filename)
 	camera.wait_recording(length)
 	camera.stop_recording()
 
