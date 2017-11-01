@@ -7,7 +7,7 @@ camera = PiCamera()
 # Main function, pilots code
 ####################################
 def main():
-	videoLength = 10
+	videoLength = 60
 	take_picture()
 	take_video(videoLength)
 
