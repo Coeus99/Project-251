@@ -16,8 +16,8 @@ def main():
 # Takes picture at high res
 ####################################
 def take_picture():
-	#Sensor mode 1: 1920x1080, 1/10<=fps<=30
-	camera.sensor_mode = 1
+	#Sensor mode 2: 3280x2464, 1/10<=fps<=15
+	camera.sensor_mode = 2
 
 	#warmup camera
 	camera.start_preview()
@@ -35,9 +35,9 @@ def take_picture():
 # Takes video given a length
 ####################################
 def take_video(length):
-	#Sensor mode 2: 3280x2464, 1/10<=fps<=15
-	#camera.sensor_mode = 2
-	camera.resolution = (1280,720)
+	#Sensor mode 2: 1920x1080, 1/10<=fps<=30
+	camera.sensor_mode = 1
+	#camera.resolution = (1280,720) #this works for some reason...
 
 	#warm up camera
 	camera.start_preview()

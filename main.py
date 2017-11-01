@@ -7,7 +7,7 @@ def main():
 ########################
 #   Make Directories   #
 ########################
-def dir_init(clearDir=0):
+def dir_init():
 	#create images folder
 	print("Creating images directory...")
 	if not os.path.exists("images"):
