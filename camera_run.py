@@ -1,5 +1,6 @@
 from time import sleep
 from picamera import PiCamera
+from datetime import datetime
 
 camera = PiCamera()
 ####################################
@@ -19,9 +20,10 @@ def take_picture():
 	#warmup camera
 	camera.start_preview()
 	sleep(2)
-
+	
+	filename = datetime.now().strftime("%Y-%m-%d::%H%M.jpeg")
 	#take photo
-	camera.capture("test.jpeg",quality = 100)
+	camera.capture(filename,quality = 100)
 
 	#prepare for mode change
 	camera.stop_preview()
@@ -30,7 +32,7 @@ def take_picture():
 ####################################
 # Takes video given a length
 ####################################
-def take_video(time):
+def take_video(length):
 	#Sensor mode 2: 3280x2464, 1/10<=fps<=15
 	camera.sensor_mode = 2
 	#warm up camera
@@ -39,7 +41,7 @@ def take_video(time):
 
 	#take video
 	camera.start_recording("test.h264",quality = 10)
-	sleep(time)
+	sleep(length)
 	camera.stop_recording()
 
 	#prepare for mode change
