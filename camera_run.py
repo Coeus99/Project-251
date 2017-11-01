@@ -36,7 +36,9 @@ def take_picture():
 ####################################
 def take_video(length):
 	#Sensor mode 2: 3280x2464, 1/10<=fps<=15
-	camera.sensor_mode = 2
+	#camera.sensor_mode = 2
+	camera.resolution = (1280,720)
+
 	#warm up camera
 	camera.start_preview()
 	sleep(2)
