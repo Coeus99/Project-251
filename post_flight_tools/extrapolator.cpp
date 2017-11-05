@@ -16,14 +16,14 @@ double GetDeltaLon(double x, double currentLat);
 double GetHumanData(vector<double> &latitude, vector<double> &longitude, vector<double> &altitude, vector<double> &velocity, vector<double> &heading);
 double GetFileData(vector<double> &latitude, vector<double> &longitude, vector<double> &altitude, vector<double> &velocity, vector<double> &heading, char source[]);
 void Extrapolate(vector<double> &latitude, vector<double> &longitude, vector<double> &altitude, vector<double> &velocity, vector<double> &heading, double terminalVelocity);
-void ExportData(vector<double> &latitude, vector<double> &longitude, vector<double> &altitude);
+void ExportData(vector<double> &latitude, vector<double> &longitude, vector<double> &altitude, char destination[]);
 
 int main(int argc, char *argv[])
 {
 	char humanData[3] = "-h";
 	char fileData[3] = "-f";
 	char source[21];
-	char destination[21];
+	char destination[21] = "extrap.kml";
 	double terminalVelocity;
 	vector<double> latitude;
 	vector<double> longitude;
@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
 	vector<double> velocity;
 	vector<double> heading;
 
-	//Prompt for units
 
 	if (argc == 2 && strcmp(argv[1],humanData) == 0)
 	{
@@ -42,7 +41,7 @@ int main(int argc, char *argv[])
 		strncpy(source, argv[2],20);
 		if (argc > 3)
 		{
-			strncpy(destination, argv[2], 20);
+			strncpy(destination, argv[3], 20);
 		}
 		terminalVelocity = GetFileData(latitude, longitude, altitude, velocity, heading, source);
 	}
@@ -63,7 +62,7 @@ int main(int argc, char *argv[])
 	cout << "Payload's predicted location is..." << endl;
 	cout << latitude.back() << " deg.lat, " << longitude.back() << " deg.lon, at " << altitude.back() << " m.\n" << endl;
 
-	ExportData(latitude, longitude, altitude);
+	ExportData(latitude, longitude, altitude, destination);
 
 	cout << "Done." << endl;
 	return 0;
@@ -134,6 +133,11 @@ double GetFileData(vector<double> &latitude, vector<double> &longitude, vector<d
 
 	ifstream fin(source);
 
+	if (!fin)
+	{
+		cerr << "Could not open input file." << endl;
+	}
+
 	fin >> lastKnownLatitude >> lastKnownLongitude >> terminalVelocity;
 
 	fin >> lastKnownHeading >> lastKnownVelocity >> lastKnownAltitude;
@@ -155,6 +159,8 @@ double GetFileData(vector<double> &latitude, vector<double> &longitude, vector<d
 		velocity.push_back(tempVelocity);
 		altitude.push_back(tempAltitude);
 	}
+
+	fin.close();
 
 	return terminalVelocity;
 }
@@ -212,9 +218,14 @@ double GetDeltaLon(double y, double currentLat)
 }
 
 
-void ExportData(vector<double> &latitude, vector<double> &longitude, vector<double> &altitude)
+void ExportData(vector<double> &latitude, vector<double> &longitude, vector<double> &altitude, char destination[])
 {
-	ofstream kml("extrap.kml");
+	ofstream kml(destination);
+	if (!kml)
+	{
+		cerr << "Failed to open or create destination file." << endl;
+	}
+
 	kml << fixed << setprecision(8);
 	
 	//kml header
