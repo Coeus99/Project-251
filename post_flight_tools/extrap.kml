@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Extrapolation</name>
+<description>Created by LG's Program</description>
+
+<Style id="yellowPoly">
+<LineStyle>
+<color>7f00ffff</color>
+<width>4</width>
+</LineStyle>
+<PolyStyle>
+<color>7f00ff00</color>
+</PolyStyle>
+</Style>
+
+<Placemark>
+<name>Flight Extrapolation</name>
+<description>Extrap by LG's Program</description>
+<styleURL>#yellowPoly</styleURL>
+<LineString>
+<extrude>1</extrude>
+<tesselate>1</tesselate>
+<altitudeMode>relativeToGround</altitudeMode>
+<coordinates>
+-102.73444000,43.69098000,1272.00000000
+-102.73554219,43.69236525,1085.39280000
+-102.73593343,43.69506629,869.28960000
+-102.73662535,43.69791348,650.74800000
+-102.73733667,43.70034148,453.23760000
+-102.73806349,43.70196441,291.99840000
+-102.73896950,43.70290312,168.24960000
+-102.73955771,43.70349047,83.82000000
+-102.73988005,43.70378979,35.96640000
+-102.74004191,43.70394008,9.75360000
+</coordinates>
+</LineString>
+</Placemark>
+
+</Document>
+</kml>
