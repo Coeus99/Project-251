@@ -1,13 +1,20 @@
 import os
+from camera_run import run_camera
 
 def main():
-	print("Initializing Directories...")
+	#Initialize directories required
 	dir_init()
+	print("Running...")
+	while (TRUE):
+		run_camera.take_picture()
+		#default is 3000s
+		run_camera.take_video()
 
 ########################
 #   Make Directories   #
 ########################
 def dir_init():
+	print("Initializing Directories...")
 	#create images folder
 	print("Creating images directory...")
 	if not os.path.exists("images"):
@@ -28,6 +35,7 @@ def dir_init():
 			print("Failed to create images directory.")
 	elif os.path.exists("videos"):
 		print("Videos directory already exists.")
+	print("Done.")
 
 if __name__ == "__main__":
 	main()

@@ -17,7 +17,7 @@ class run_camera:
 		#prepare for mode change
 		camera.stop_preview()
 
-	def take_video(self,videoLength):
+	def take_video(self,videoLength=3000):
 		#Sensor mode 2: 1920x1080, 1/10<=fps<=30
 		camera.sensor_mode = 1
 		#warm up camera
