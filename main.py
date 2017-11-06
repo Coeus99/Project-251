@@ -1,14 +1,16 @@
 import os
 from camera_run import run_camera
+from time import sleep
+
+camera = run_camera()
 
 def main():
 	#Initialize directories required
 	dir_init()
 	print("Running...")
-	while (TRUE):
-		run_camera.take_picture()
-		#default is 3000s
-		run_camera.take_video()
+	for x in range(12):
+		camera.take_picture()
+		camera.take_video(300)
 
 ########################
 #   Make Directories   #
