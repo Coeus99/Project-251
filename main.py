@@ -55,8 +55,13 @@ def take_image():
 		sleep(2)
 		print("Taking image...")
 		filename = "images/"+datetime.now().strftime("%Y-%m-%d--%H%M.jpeg")
-		camera.capture(filename,quality=100)
+		camera.capture(filename)
 		camera.stop_preview()
+		sleep(2)
+		if(os.path.exists(filename)):
+			print("Successfully captured image.\n")
+		else:
+			print("Failed to capture image.\n")
 
 
 def take_video(videoLength):
@@ -70,10 +75,15 @@ def take_video(videoLength):
 		sleep(2)
 		print("Taking video for "+str(videoLength)+" seconds...")
 		filename = "videos/"+datetime.now().strftime("%Y-%m-%d--%H%M.h264")
-		camera.start_recording(filename,quality=1)
+		camera.start_recording(filename)
 		camera.wait_recording(videoLength)
 		camera.stop_recording()
 		camera.stop_preview()
+		sleep(2)
+		if(os.path.exists(filename)):
+			print("Successfully took video.\n")
+		else:
+			print("Failed to take video.\n")
 
 
 if __name__ == "__main__":
