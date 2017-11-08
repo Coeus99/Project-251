@@ -55,7 +55,7 @@ def take_image():
 		sleep(2)
 		print("Taking image...")
 		filename = "images/"+datetime.now().strftime("%Y-%m-%d--%H%M.jpeg")
-		camera.capture(filename)
+		camera.capture(filename,quality=100)
 		camera.stop_preview()
 		sleep(2)
 		if(os.path.exists(filename)):
@@ -68,14 +68,14 @@ def take_video(videoLength):
 	with picamera.PiCamera() as camera:
 		#Sensor mode 1: 1920.1080, 1/10<=fps<=30
 		print("Changing sensor mode...")
-		camera.sensor_mode = 1
+		camera.sensor_mode = 4
 		print("Sensor mode is now "+str(camera.sensor_mode))
 		print("Beginning preview...")
 		camera.start_preview()
 		sleep(2)
 		print("Taking video for "+str(videoLength)+" seconds...")
 		filename = "videos/"+datetime.now().strftime("%Y-%m-%d--%H%M.h264")
-		camera.start_recording(filename)
+		camera.start_recording(filename,quality=10)
 		camera.wait_recording(videoLength)
 		camera.stop_recording()
 		camera.stop_preview()
