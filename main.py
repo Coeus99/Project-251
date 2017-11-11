@@ -57,7 +57,6 @@ def take_image():
 		filename = "images/"+datetime.now().strftime("%Y-%m-%d--%H%M.jpeg")
 		camera.capture(filename,quality=100)
 		camera.stop_preview()
-		sleep(2)
 		if(os.path.exists(filename)):
 			print("Successfully captured image.\n")
 		else:
@@ -79,7 +78,6 @@ def take_video(videoLength):
 		camera.wait_recording(videoLength)
 		camera.stop_recording()
 		camera.stop_preview()
-		sleep(2)
 		if(os.path.exists(filename)):
 			print("Successfully took video.\n")
 		else:
