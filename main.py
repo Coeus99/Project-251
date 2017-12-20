@@ -55,6 +55,10 @@ def take_image():
 		sleep(2)
 		print("Taking image...")
 		filename = "images/"+datetime.now().strftime("%Y-%m-%d--%H%M.jpeg")
+		dup = 0
+		while(os.path.exists("filename")):
+			filename = "images/"+datetime.now().strftime("%Y-%m-%d--%H%M"+"("+dup+")"+".jpeg")
+			dup += 1
 		camera.capture(filename,quality=100)
 		camera.stop_preview()
 		if(os.path.exists(filename)):
@@ -74,6 +78,10 @@ def take_video(videoLength):
 		sleep(2)
 		print("Taking video for "+str(videoLength)+" seconds...")
 		filename = "videos/"+datetime.now().strftime("%Y-%m-%d--%H%M.h264")
+		dup = 0
+		while(os.path.exists("filename")):
+			filename = "videos/"+datetime.now().strftime("%Y-%m-%d--%H%M"+"("+dup+")"+".h264")
+			dup += 1
 		camera.start_recording(filename,quality=10)
 		camera.wait_recording(videoLength)
 		camera.stop_recording()
