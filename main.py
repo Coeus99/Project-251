@@ -11,8 +11,10 @@ def main():
 	for x in range(120):
 		print(str(x+1)+" of "+str(120))
 		take_image()
+		os.sync()
 		sleep(1)
 		take_video(300)
+		os.sync
 		sleep(1)
 	print("Done.")
 
