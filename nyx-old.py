@@ -1,4 +1,5 @@
 import os
+#import subprocess
 import picamera
 from time import sleep
 from datetime import datetime
@@ -12,9 +13,11 @@ def main():
 		print(str(x+1)+" of "+str(120))
 		take_image()
 		os.sync()
+		#subprocess.call("sync")
 		sleep(1)
 		take_video(300)
-		os.sync
+		os.sync()
+		#subprocess.call("sync")
 		sleep(1)
 	print("Done.")
 
