@@ -12,4 +12,11 @@ Todo:
   - Find a way of shutting off wifi automatically (maybe based on whether or not a network is available)
   - Remove extrapolator, I have completed a better version and will upload that in another git repo.
 
+Parts:
+  - Raspberry Pi Zero W
+  - Raspberry Pi Camera v2.1
+  - 2,000 mAh Lithium Polymer Ion Battery
+  - Tracksoar Open-Source APRS Tracker
+  - 2 Ultimate Lithium AA Batteries
+
 Code written by Logan Grosz
