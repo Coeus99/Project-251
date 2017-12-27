@@ -10,7 +10,6 @@ Todo:
   - Improve/degrade video quality
   - Improve live time
   - Find a way of shutting off wifi automatically (maybe based on whether or not a network is available)
-  - Remove extrapolator, I have completed a better version and will upload that in another git repo.
 
 Parts:
   - Raspberry Pi Zero W
