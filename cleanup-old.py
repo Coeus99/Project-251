@@ -6,20 +6,20 @@ def main():
 
 	if(images == 1):
 		print("Cleaning images directory...")
-		if not os.path.exists("images"):
+		if not os.path.exists("/home/pi/Project-Nyx/images"):
 			print("Images directory doesn't exist.")
 		else:
-			for file in os.listdir("images"):
-				path = os.path.join("images",file)
+			for file in os.listdir("/home/pi/Project-Nyx/images"):
+				path = os.path.join("/home/pi/Project-Nyx/images",file)
 				os.unlink(path)
 		print("Finished cleaning.")
 	if(videos == 1):
 		print("Cleaning videos directory...")
-		if not os.path.exists("videos"):
+		if not os.path.exists("/home/pi/Project-Nyx/videos"):
 			print("Videos directory does not exist.")
 		else:
-			for file in os.listdir("videos"):
-				path = os.path.join("videos",file)
+			for file in os.listdir("/home/pi/Project-Nyx/videos"):
+				path = os.path.join("/home/pi/Project-Nyx/videos",file)
 				os.unlink(path)
 		print("Finished cleaning.")
 	print("Done.")
