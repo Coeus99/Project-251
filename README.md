@@ -1,8 +1,22 @@
 # Project Nyx
 Project Nyx, the successor to Project 250.
 
-To launch 2018.
+To launch (Spring or Summer) 2018.
 
-Bugs: Raspberry Pi doesnt continue after a certain point. For example, it successfully takes 14/120 images and videos, and then stops. No error messages, just stops.
+Bugs: None that I know of
+
+Todo:
+  - Improve image quality
+  - Improve/degrade video quality
+  - Improve live time
+  - Find a way of shutting off wifi automatically (maybe based on whether or not a network is available)
+  - Remove extrapolator, I have completed a better version and will upload that in another git repo.
+
+Parts:
+  - Raspberry Pi Zero W
+  - Raspberry Pi Camera v2.1
+  - 2,000 mAh Lithium Polymer Ion Battery
+  - Tracksoar Open-Source APRS Tracker
+  - 2 Ultimate Lithium AA Batteries
 
 Code written by Logan Grosz
