@@ -9,7 +9,7 @@ Todo:
   - Improve/degrade video quality
       - Mode 1 : 247 mA
       - Mode 2 : 
-      - Mode 3 : 
+      - Mode 3 : Same as 2
       - Mode 4 : 
       - Mode 5 : 228 mA
       - Mode 6 : 226 mA
