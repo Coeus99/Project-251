@@ -15,9 +15,9 @@ Todo:
       - Mode 6 : 226 mA
       - Mode 7 : 200 mA
   - Improve battery life
-      - Disable BT
+      - Disabled BT
       - Disabled wifi after 5* minutes (maybe less time)
-      - Disable HDMI
+      - Disabled HDMI
       - (maybe turn off the LED?)
       
 Parts:
