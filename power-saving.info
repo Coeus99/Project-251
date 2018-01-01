@@ -93,6 +93,13 @@ blacklist brcmutil
 
 Disable HDMI
 ==================
+To disable HDMI run the following command
+
+sudo crontab -e
+
+And add the following line...
+
+@reboot /usr/bin/tvservice -o
 ==================
 
 
