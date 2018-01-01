@@ -1,2 +1,0 @@
-@reboot /bin/sleep 180 && /sbin/ifconfig wlan0 down &
-@reboot bash /home/pi/Project-Nyx/nyx-driver.sh &

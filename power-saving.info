@@ -1,0 +1,101 @@
+How to power save with Project Nyx...
+
+The following commands have been tested on a Raspberry Pi Zero W running
+the last release of Debian Jessie located at:
+	downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2017-07-05
+Post flash, run sudo apt-get update
+
+
+Start-On-Boot
+==================
+To start scripts automatically run the following command...
+
+sudo crontab -e
+
+And add the following line...
+
+@reboot bash /path/to/repo/Project-Nyx/nyx-driver.sh &
+==================
+
+
+Disable Bluetooth
+==================
+To disable bluetooth per Rasbian Jessie run
+
+sudo nano /boot/config.txt
+
+And add the line, before return
+
+dtoverlay=pi3-disable-bt
+
+---
+
+In addition to the last operation, to conserve a tiny bit of power on boot
+blacklist the BT drivers via the following. Run
+
+sudo nano /etc/modprobe.d/raspi-blacklist.conf
+
+And add the following lines...
+
+blacklist btbcm
+blacklist hci_uart
+
+---
+
+Finally, a last way of disabling BT is via the systemctl.
+
+To check status run
+
+sudo systemctl status bluetooth.service
+
+To stop the service run
+
+sudo systemctl stop bluetooth.service
+
+To disable the service run
+
+sudo systemctl disable bluetooth.service
+==================
+
+Disable Wifi
+==================
+To disable wifi after a specified amount of time after boot run
+
+sudo crontab -e
+
+And add the following line...
+
+@reboot /bin/sleep <seconds to disable wifi> && /sbin/ifconfig wlan0 down &
+
+---
+
+To disable wifi completely, run
+
+sudo nano /boot/config.txt
+
+And add the following line...
+
+dtoverlay=pi3-disable-wifi
+
+---
+
+In addition to the last operation, to conserve a tiny bit of power on boot
+blacklist the WiFi drivers via the following. Run
+
+sudo nano /etc/modprobe.d/raspi-blacklist.conf
+
+And add the following lines
+
+blacklist brcmfmac
+blacklist brcmutil
+==================
+
+
+Disable HDMI
+==================
+==================
+
+
+Disable LED
+==================
+==================
