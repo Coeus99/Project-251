@@ -12,9 +12,11 @@ To start scripts automatically run the following command...
 
 sudo crontab -e
 
-And add the following line...
+And add the following lines...
+Be sure the setup line is first. This command should not fail.
 
-@reboot bash /path/to/repo/Project-Nyx/nyx-driver.sh &
+@reboot bash /path/to/repo/Project-Nyx/setup.sh
+@reboot bash /path/to/repo/Project-Nyx/nyx-driver.sh >> /path/to/repo/Project-Nyx/error-logs/cron-err.log 2>&1 &
 ==================
 
 
@@ -65,7 +67,7 @@ sudo crontab -e
 
 And add the following line...
 
-@reboot /bin/sleep <seconds to disable wifi> && /sbin/ifconfig wlan0 down &
+@reboot /bin/sleep <seconds until wifi down> && /sbin/ifconfig wlan0 down >> /path/to/repo/Project-Nyx/error-logs/dwifi-err.log 2>&1 &
 
 ---
 
@@ -93,9 +95,24 @@ blacklist brcmutil
 
 Disable HDMI
 ==================
+To disable HDMI run the following command
+
+sudo crontab -e
+
+And add the following line...
+
+@reboot /usr/bin/tvservice -o >> /path/to/repo/Project-Nyx/error-logs/tv-err.log 2>&1.log
 ==================
 
 
 Disable LED
 ==================
+Do disable the ACT LED for the Raspberry Pi Zero (W), run the following...
+
+sudo nano /boot/config.txt
+
+Add the following line
+
+dtparam=act_led_trigger=none
+dtparam=act_led_activelow=on
 ==================
