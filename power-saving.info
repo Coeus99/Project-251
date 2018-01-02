@@ -107,4 +107,12 @@ And add the following line...
 
 Disable LED
 ==================
+Do disable the ACT LED for the Raspberry Pi Zero (W), run the following...
+
+sudo nano /boot/config.txt
+
+Add the following line
+
+dtparam=act_led_trigger=none
+dtparam=act_led_activelow=on
 ==================
