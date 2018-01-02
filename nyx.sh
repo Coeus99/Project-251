@@ -37,7 +37,7 @@ video_filename=$video_filename-$v.h264
 #mode 5: 1640x922 @ 0.1-40fps, full FOV
 #mode 6: 1280x720 @ 40-90fps, partial FOV
 #mode 7: 640x480 # 40-90fps, partial FOV
-raspivid -md 7 -t 300000 -o $video_filename -n
+raspivid -md 6 -t 300000 -o $video_filename -n
 #-md 1, set to mode 1
 #-t 300000, take video for 5 minutes
 #-o $video_filename, output video to file
