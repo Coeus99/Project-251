@@ -3,7 +3,7 @@ Project Nyx, the successor to Project 250.
 
 To launch (Spring or Summer) 2018.
 
-Bugs: None that I know of
+Bugs: Don't run setup.sh in cron, for some reason the files won't get saved. Are subsequent cron commands forking early?
 
 Todo:
   - Improve/degrade video quality
