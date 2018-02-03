@@ -3,7 +3,7 @@ Project Nyx, the successor to Project 250.
 
 To launch (Spring or Summer) 2018.
 
-Bugs: None that I know of
+Bugs: Don't run setup.sh in cron, for some reason the files won't get saved. Are subsequent cron commands forking early?
 
 Todo:
   - Improve/degrade video quality
@@ -16,12 +16,13 @@ Todo:
       - Mode 7 : 200 mA
   - Improve battery life
       - Disabled BT
-      - Disabled wifi after 5* minutes (maybe less time)
+      - Disabled wifi after 2* minutes (adjustable depending on OS)
       - Disabled HDMI
       - (maybe turn off the LED?)
       
 Parts:
   - Raspberry Pi Zero W
+    - Running latest version of Raspbian Jessie Lite with update (no dist-upgrade)
   - Raspberry Pi Camera v2.1
   - 2,000 mAh Lithium Polymer Ion Battery
   - Tracksoar Open-Source APRS Tracker
