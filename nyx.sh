@@ -12,6 +12,10 @@ image_filename=$image_filename-$i.jpeg
 #mode 2: 3280x2464, Full FOV
 #I'm using this mode, no argument, I want good pictures
 raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename -n
+raspistill -t 2000 -md 2 -q 100 -vf -hf -0 $image_filename-0 -n
+raspistill -t 2000 -md 2 -q 100 -vf -hf -0 $image_filename-1 -n
+raspistill -t 2000 -md 2 -q 100 -vf -hf -0 $image_filename-2 -n
+raspistill -t 2000 -md 2 -q 100 -vf -hf -0 $image_filename-3 -n
 #-md 2, switch to mode 2
 #-t 2000, take photo after 2 seconds
 #-q 100, set image quality to 100 (0-100)
