@@ -10,13 +10,11 @@ done
 image_filename=$image_filename-$i
 #take that image
 #mode 2: 3280x2464, Full FOV
-<<<<<<< HEAD
 raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename.jpeg -n
 raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename-0.jpeg -n
 raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename-1.jpeg -n
 raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename-2.jpeg -n
 raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename-3.jpeg -n
-=======
 #I'm using this mode, no argument, I want good pictures
 raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename -n
 #-md 2, switch to mode 2
