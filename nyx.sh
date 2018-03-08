@@ -22,7 +22,6 @@ raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename -n
 #-q 100, set image quality to 100 (0-100)
 #-o $image_filename, output to file
 #-n ,no camera preview
->>>>>>> parent of a066f88... now take 5 images instead of 1.
 
 #write to disk, we don't want to lose anything!
 sync
