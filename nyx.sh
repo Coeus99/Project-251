@@ -10,15 +10,18 @@ done
 image_filename=$image_filename-$i
 #take that image
 #mode 2: 3280x2464, Full FOV
-raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename.jpeg -n
-raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename-0.jpeg -n
-raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename-1.jpeg -n
-raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename-2.jpeg -n
-raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename-3.jpeg -n
-#I'm using this mode, no argument, I want good pictures
-raspistill -t 2000 -md 2 -q 100 -vf -hf -o $image_filename -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-0.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-1.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-2.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-3.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-4.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-5.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-6.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-7.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-8.jpeg -n
+raspistill -md 2 -q 100 -vf -hf -o $image_filename-9.jpeg -n
 #-md 2, switch to mode 2
-#-t 2000, take photo after 2 seconds
 #-q 100, set image quality to 100 (0-100)
 #-o $image_filename, output to file
 #-n ,no camera preview
@@ -42,7 +45,7 @@ video_filename=$video_filename-$v.h264
 #mode 5: 1640x922 @ 0.1-40fps, full FOV
 #mode 6: 1280x720 @ 40-90fps, partial FOV
 #mode 7: 640x480 # 40-90fps, partial FOV
-raspivid -md 2 -t 5000 -vf -hf -o $video_filename -n
+raspivid -md 2 -t 1000 -vf -hf -o $video_filename -n
 #-md 1, set to mode 1
 #-t 300000, take video for 5 minutes
 #-o $video_filename, output video to file
