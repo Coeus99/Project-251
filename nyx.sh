@@ -4,14 +4,28 @@
 #save with datetime
 #go to milli-second
 
-fn=$(date -u +%Y%m%d%H%M%S)
-echo "Took photo $fn"
-sleep 2
+#number of images
+n=10
+#timer for video
+t=120000
 
-#take video of n length
-#save with datetime
-#got to milli-second
+#take images
+for ((i=1;i<11;i++))
+do
+	fn=images/nyx_`date -u +%Y%m%d%H%M%S`.jpeg
+	raspistill -vf -hf -md 2 -q 100 -o $fn
+	echo "Took image $i of $n: $fn"
+done
 
-fn=$(date -u +%Y%m%d%H%M%S)
-echo "Took video $fn"
-sleep 2
+#sync to disk
+sync
+
+#take video
+
+echo "Taking $t milli-second video."
+fn=videos/nyx_`date -u +%Y%m%d%H%M%S`.h264
+raspivid -vf -hf -md 2 -t $t -o $fn
+echo "Took video: $fn"
+
+#sync to disk
+sync
