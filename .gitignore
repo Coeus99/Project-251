@@ -1,6 +1,8 @@
 #Project-Nyx ignore files
+
 #videos and images taken
 /images
 /videos
+
 #error logs
 /error-logs
