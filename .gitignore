@@ -4,5 +4,5 @@
 /images
 /videos
 
-#error logs
-/error-logs
+#logs
+/logs
