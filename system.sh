@@ -6,7 +6,7 @@ log="/home/pi/Project-Nyx/logs/system.log"
 while true
 do
 	#get system time
-	echo -e "time=$(date +%Y%m%d%H%M%S)" >> $log 2>&1
+	echo -e "time=$(date -u +%Y%m%d%H%M%S)" >> $log 2>&1
 
 	#get core temperature
 	echo -e "$(vcgencmd measure_temp)" >> $log 2>&1
