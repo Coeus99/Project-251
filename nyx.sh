@@ -7,7 +7,7 @@
 #number of images
 n=10
 #timer for video
-t=120000
+t=60000
 
 while true
 do
